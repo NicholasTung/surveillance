@@ -12,7 +12,9 @@ While RichTextLabel proves promising for the pure text parts of documents, with 
 #### Second attempt (current): Composing overall documents with instances of smaller pieces
 This second attempt will split a document into multiple parts. Components of a document can be linked together via containers
 
-- Summary
+The current idea is that making a document will involve instancing its appropriate class and then editing that instance's fields and/or adding child instances to build a document programmatically. This should (in theory) allow for modular and reusable components of documents that abstract away formatting and combining components to form a document.
+
+- SummaryDocument
   - scrollable set of document components using VBoxContainer
     - Set gaps of VBoxContainer to 0
 
