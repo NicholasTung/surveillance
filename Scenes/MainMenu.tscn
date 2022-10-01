@@ -4,7 +4,6 @@
 [ext_resource path="res://png/Monitor.png" type="Texture" id=2]
 [ext_resource path="res://Scenes/MainMenu.gd" type="Script" id=3]
 [ext_resource path="res://Scenes/OpeningScene.tscn" type="PackedScene" id=4]
-[ext_resource path="res://png/BUtton temp.png" type="Texture" id=5]
 
 [sub_resource type="DynamicFont" id=1]
 size = 100
@@ -21,11 +20,23 @@ border_width_left = 5
 border_width_top = 5
 border_width_right = 5
 border_width_bottom = 5
-border_color = Color( 0.937255, 0.290196, 0.290196, 1 )
+border_color = Color( 0.768627, 0.0588235, 0, 1 )
 
-[sub_resource type="StyleBoxTexture" id=3]
-texture = ExtResource( 5 )
-region_rect = Rect2( 0, 0, 224, 49 )
+[sub_resource type="StyleBoxFlat" id=5]
+bg_color = Color( 0.6, 0.6, 0.6, 0 )
+border_width_left = 5
+border_width_top = 5
+border_width_right = 5
+border_width_bottom = 5
+border_color = Color( 0.760784, 0.784314, 0, 1 )
+
+[sub_resource type="StyleBoxFlat" id=6]
+bg_color = Color( 0.6, 0.6, 0.6, 0 )
+border_width_left = 5
+border_width_top = 5
+border_width_right = 5
+border_width_bottom = 5
+border_color = Color( 0.0470588, 0.619608, 0, 1 )
 
 [node name="MainMenu" type="Node2D"]
 script = ExtResource( 3 )
@@ -75,7 +86,7 @@ size_flags_horizontal = 3
 size_flags_vertical = 3
 custom_fonts/font = SubResource( 2 )
 custom_styles/hover = SubResource( 4 )
-custom_styles/normal = SubResource( 3 )
+text = "Login"
 
 [node name="MarginContainer3" type="MarginContainer" parent="MarginContainer/VBoxContainer"]
 margin_top = 233.0
@@ -93,6 +104,7 @@ margin_bottom = 112.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
 custom_fonts/font = SubResource( 2 )
+custom_styles/hover = SubResource( 5 )
 text = "Controls"
 
 [node name="MarginContainer4" type="MarginContainer" parent="MarginContainer/VBoxContainer"]
@@ -111,6 +123,7 @@ margin_bottom = 113.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
 custom_fonts/font = SubResource( 2 )
+custom_styles/hover = SubResource( 6 )
 text = "Credits"
 
 [connection signal="button_up" from="MarginContainer/VBoxContainer/MarginContainer2/Start Game Button" to="." method="_on_Start_Game_Button_button_up"]

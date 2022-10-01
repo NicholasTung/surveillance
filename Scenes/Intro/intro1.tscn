@@ -1,0 +1,98 @@
+[gd_scene load_steps=7 format=2]
+
+[ext_resource path="res://Inconsolata-Black.ttf" type="DynamicFontData" id=1]
+[ext_resource path="res://png/Monitor.png" type="Texture" id=2]
+[ext_resource path="res://Scenes/Intro/intro1.gd" type="Script" id=3]
+
+[sub_resource type="DynamicFont" id=1]
+size = 25
+font_data = ExtResource( 1 )
+
+[sub_resource type="Animation" id=2]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/path = NodePath("Task:percent_visible")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ 0.0 ]
+}
+
+[sub_resource type="Animation" id=3]
+resource_name = "type"
+length = 4.0
+tracks/0/type = "value"
+tracks/0/path = NodePath("Task:percent_visible")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 1 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ 0.0, 1.0 ]
+}
+
+[node name="Node2D" type="Node2D"]
+script = ExtResource( 3 )
+
+[node name="ColorRect" type="ColorRect" parent="."]
+margin_left = -6.0
+margin_top = 1.0
+margin_right = 1061.0
+margin_bottom = 597.0
+color = Color( 0, 0, 0, 0.611765 )
+
+[node name="TextureRect" type="TextureRect" parent="."]
+visible = false
+margin_top = -34.0
+margin_right = 1024.0
+margin_bottom = 588.0
+rect_scale = Vector2( 1.0248, 0.990458 )
+texture = ExtResource( 2 )
+
+[node name="MarginContainer" type="MarginContainer" parent="."]
+margin_left = 69.0
+margin_top = 40.0
+margin_right = 957.0
+margin_bottom = 423.0
+
+[node name="Task" type="Label" parent="MarginContainer"]
+margin_top = 118.0
+margin_right = 888.0
+margin_bottom = 265.0
+custom_colors/font_color = Color( 1, 1, 1, 1 )
+custom_fonts/font = SubResource( 1 )
+text = "Kilo City, 2084
+
+
+In a prospering new age of technology, 
+a surveillance manager must decide the fate of potential criminals…"
+align = 1
+uppercase = true
+percent_visible = 0.0
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="MarginContainer"]
+autoplay = "type"
+playback_speed = 0.2
+anims/RESET = SubResource( 2 )
+anims/type = SubResource( 3 )
+
+[node name="MarginContainer2" type="MarginContainer" parent="."]
+margin_left = 817.0
+margin_top = 513.0
+margin_right = 1009.0
+margin_bottom = 584.0
+
+[node name="Button" type="Button" parent="MarginContainer2"]
+margin_right = 192.0
+margin_bottom = 71.0
+text = "Continue"
+
+[connection signal="button_up" from="MarginContainer2/Button" to="." method="_on_Button_button_up"]
