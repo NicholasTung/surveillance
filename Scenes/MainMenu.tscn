@@ -1,9 +1,10 @@
-[gd_scene load_steps=7 format=2]
+[gd_scene load_steps=10 format=2]
 
 [ext_resource path="res://Inconsolata-Black.ttf" type="DynamicFontData" id=1]
-[ext_resource path="res://Pictures/binoculars.jpg" type="Texture" id=2]
+[ext_resource path="res://png/Monitor.png" type="Texture" id=2]
 [ext_resource path="res://Scenes/MainMenu.gd" type="Script" id=3]
 [ext_resource path="res://Scenes/OpeningScene.tscn" type="PackedScene" id=4]
+[ext_resource path="res://png/BUtton temp.png" type="Texture" id=5]
 
 [sub_resource type="DynamicFont" id=1]
 size = 100
@@ -13,48 +14,53 @@ font_data = ExtResource( 1 )
 size = 40
 font_data = ExtResource( 1 )
 
+[sub_resource type="StyleBoxFlat" id=4]
+bg_color = Color( 0.862745, 0.129412, 0.129412, 0 )
+draw_center = false
+border_width_left = 5
+border_width_top = 5
+border_width_right = 5
+border_width_bottom = 5
+border_color = Color( 0.937255, 0.290196, 0.290196, 1 )
+
+[sub_resource type="StyleBoxTexture" id=3]
+texture = ExtResource( 5 )
+region_rect = Rect2( 0, 0, 224, 49 )
+
 [node name="MainMenu" type="Node2D"]
 script = ExtResource( 3 )
 mainGameScene = ExtResource( 4 )
 
-[node name="ColorRect" type="ColorRect" parent="."]
+[node name="TextureRect" type="TextureRect" parent="."]
 margin_right = 1026.0
-margin_bottom = 601.0
-
-[node name="MarginContainer" type="MarginContainer" parent="."]
-margin_right = 1024.0
 margin_bottom = 600.0
-custom_constants/margin_right = 100
-custom_constants/margin_top = 300
-custom_constants/margin_left = 100
-custom_constants/margin_bottom = 100
-
-[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer"]
-margin_left = 100.0
-margin_top = 300.0
-margin_right = 924.0
-margin_bottom = 564.0
-
-[node name="Binoculars" type="Sprite" parent="MarginContainer/VBoxContainer"]
-position = Vector2( 412, -140 )
-scale = Vector2( 1.01503, 0.856394 )
+rect_scale = Vector2( 1.02517, 1.0048 )
 texture = ExtResource( 2 )
 
+[node name="MarginContainer" type="MarginContainer" parent="."]
+margin_left = 74.0
+margin_top = 70.0
+margin_right = 954.0
+margin_bottom = 532.0
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer"]
+margin_right = 880.0
+margin_bottom = 462.0
+
 [node name="Game Title" type="Label" parent="MarginContainer/VBoxContainer"]
-margin_right = 824.0
-margin_bottom = 105.0
+margin_right = 880.0
+margin_bottom = 112.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
-custom_colors/font_color = Color( 0.0745098, 0.0431373, 0.0431373, 1 )
+custom_colors/font_color = Color( 1, 1, 1, 1 )
 custom_fonts/font = SubResource( 1 )
 text = "Surveillance"
 align = 1
-valign = 1
 
 [node name="MarginContainer2" type="MarginContainer" parent="MarginContainer/VBoxContainer"]
-margin_top = 109.0
-margin_right = 824.0
-margin_bottom = 158.0
+margin_top = 116.0
+margin_right = 880.0
+margin_bottom = 229.0
 rect_pivot_offset = Vector2( -620, -93 )
 size_flags_horizontal = 3
 size_flags_vertical = 3
@@ -63,17 +69,18 @@ custom_constants/margin_left = 300
 
 [node name="Start Game Button" type="Button" parent="MarginContainer/VBoxContainer/MarginContainer2"]
 margin_left = 300.0
-margin_right = 524.0
-margin_bottom = 49.0
+margin_right = 580.0
+margin_bottom = 113.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
 custom_fonts/font = SubResource( 2 )
-text = "Start Game"
+custom_styles/hover = SubResource( 4 )
+custom_styles/normal = SubResource( 3 )
 
 [node name="MarginContainer3" type="MarginContainer" parent="MarginContainer/VBoxContainer"]
-margin_top = 162.0
-margin_right = 824.0
-margin_bottom = 211.0
+margin_top = 233.0
+margin_right = 880.0
+margin_bottom = 345.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
 custom_constants/margin_right = 300
@@ -81,17 +88,17 @@ custom_constants/margin_left = 300
 
 [node name="Controls Button" type="Button" parent="MarginContainer/VBoxContainer/MarginContainer3"]
 margin_left = 300.0
-margin_right = 524.0
-margin_bottom = 49.0
+margin_right = 580.0
+margin_bottom = 112.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
 custom_fonts/font = SubResource( 2 )
 text = "Controls"
 
 [node name="MarginContainer4" type="MarginContainer" parent="MarginContainer/VBoxContainer"]
-margin_top = 215.0
-margin_right = 824.0
-margin_bottom = 264.0
+margin_top = 349.0
+margin_right = 880.0
+margin_bottom = 462.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
 custom_constants/margin_right = 300
@@ -99,8 +106,8 @@ custom_constants/margin_left = 300
 
 [node name="Credits Button" type="Button" parent="MarginContainer/VBoxContainer/MarginContainer4"]
 margin_left = 300.0
-margin_right = 524.0
-margin_bottom = 49.0
+margin_right = 580.0
+margin_bottom = 113.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
 custom_fonts/font = SubResource( 2 )
