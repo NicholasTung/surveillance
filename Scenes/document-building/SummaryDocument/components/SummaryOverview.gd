@@ -7,7 +7,7 @@ extends RichTextLabel
 var fullname
 var age
 
-const info_format_str = "[b]{key}:[/b] {value}\n"
+const info_format_str = "[color=black][b]{key}:[/b] {value}[/color]\n"
 
 func _init(p_fullname = "dummy name", p_age = 0):
 	fullname = p_fullname
