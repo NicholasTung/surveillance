@@ -18,10 +18,11 @@ custom_styles/panel = SubResource( 1 )
 [node name="VBoxContainer" type="VBoxContainer" parent="PanelContainer"]
 margin_right = 1024.0
 margin_bottom = 600.0
+custom_constants/separation = 0
 
 [node name="DocumentViewer" type="TabContainer" parent="PanelContainer/VBoxContainer"]
 margin_right = 1024.0
-margin_bottom = 541.0
+margin_bottom = 545.0
 size_flags_vertical = 3
 
 [node name="DecisionCluster" type="HBoxContainer" parent="PanelContainer/VBoxContainer"]
