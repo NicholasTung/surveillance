@@ -13,3 +13,12 @@ func _ready():
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 #func _process(delta):
 #	pass
+
+
+func _on_IgnoreButton_button_up():
+	$TextureProgress.value-=10
+	#get_tree().change_scene("res://Scenes/Intro/intro1.tscn")
+
+
+func _on_ArrestButton_button_up():
+	$TextureProgress.value+=10
