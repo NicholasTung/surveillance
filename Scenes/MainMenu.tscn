@@ -1,10 +1,39 @@
-[gd_scene load_steps=10 format=2]
+[gd_scene load_steps=11 format=2]
 
 [ext_resource path="res://Inconsolata-Black.ttf" type="DynamicFontData" id=1]
 [ext_resource path="res://png/Monitor.png" type="Texture" id=2]
 [ext_resource path="res://Scenes/MainMenu.gd" type="Script" id=3]
-[ext_resource path="res://Scenes/OpeningScene.tscn" type="PackedScene" id=4]
 [ext_resource path="res://png/BUtton temp.png" type="Texture" id=5]
+
+[sub_resource type="Animation" id=7]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/path = NodePath("AnimationPlayer/ColorRect:color")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Color( 0, 0, 0, 1 ) ]
+}
+
+[sub_resource type="Animation" id=8]
+resource_name = "fade"
+tracks/0/type = "value"
+tracks/0/path = NodePath("AnimationPlayer/ColorRect:color")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 1 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Color( 0, 0, 0, 1 ), Color( 0, 0, 0, 0 ) ]
+}
 
 [sub_resource type="DynamicFont" id=1]
 size = 100
@@ -29,7 +58,19 @@ region_rect = Rect2( 0, 0, 224, 49 )
 
 [node name="MainMenu" type="Node2D"]
 script = ExtResource( 3 )
-mainGameScene = ExtResource( 4 )
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+playback_default_blend_time = 0.5
+playback_speed = 0.2
+anims/RESET = SubResource( 7 )
+anims/fade = SubResource( 8 )
+
+[node name="ColorRect" type="ColorRect" parent="AnimationPlayer"]
+margin_left = 74.0
+margin_top = 72.0
+margin_right = 956.0
+margin_bottom = 535.0
+color = Color( 0, 0, 0, 1 )
 
 [node name="TextureRect" type="TextureRect" parent="."]
 margin_right = 1026.0
@@ -113,7 +154,15 @@ size_flags_vertical = 3
 custom_fonts/font = SubResource( 2 )
 text = "Credits"
 
+[node name="Button" type="Button" parent="."]
+margin_left = 946.0
+margin_top = 540.0
+margin_right = 1013.0
+margin_bottom = 594.0
+text = "Power"
+
 [connection signal="button_up" from="MarginContainer/VBoxContainer/MarginContainer2/Start Game Button" to="." method="_on_Start_Game_Button_button_up"]
 [connection signal="pressed" from="MarginContainer/VBoxContainer/MarginContainer2/Start Game Button" to="." method="_on_Start_Game_Button_pressed"]
 [connection signal="button_up" from="MarginContainer/VBoxContainer/MarginContainer3/Controls Button" to="." method="_on_Controls_Button_button_up"]
 [connection signal="button_up" from="MarginContainer/VBoxContainer/MarginContainer4/Credits Button" to="." method="_on_Credits_Button_button_up"]
+[connection signal="button_up" from="Button" to="." method="_on_Button_button_up"]

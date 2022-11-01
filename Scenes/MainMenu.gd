@@ -10,3 +10,7 @@ func _on_Controls_Button_button_up():
 
 func _on_Credits_Button_button_up():
 	get_tree().change_scene("res://Scenes/Credits Page.tscn")
+
+
+func _on_Button_button_up():
+	get_node("AnimationPlayer").play("fade")
