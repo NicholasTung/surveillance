@@ -1,8 +1,9 @@
-[gd_scene load_steps=11 format=2]
+[gd_scene load_steps=12 format=2]
 
 [ext_resource path="res://Inconsolata-Black.ttf" type="DynamicFontData" id=1]
 [ext_resource path="res://png/Monitor.png" type="Texture" id=2]
 [ext_resource path="res://Scenes/MainMenu.gd" type="Script" id=3]
+[ext_resource path="res://png/bpowerutton.png" type="Texture" id=4]
 [ext_resource path="res://png/BUtton temp.png" type="Texture" id=5]
 
 [sub_resource type="Animation" id=7]
@@ -154,12 +155,12 @@ size_flags_vertical = 3
 custom_fonts/font = SubResource( 2 )
 text = "Credits"
 
-[node name="Button" type="Button" parent="."]
+[node name="Button" type="TextureButton" parent="."]
 margin_left = 946.0
 margin_top = 540.0
-margin_right = 1013.0
-margin_bottom = 594.0
-text = "Power"
+margin_right = 997.0
+margin_bottom = 590.0
+texture_normal = ExtResource( 4 )
 
 [connection signal="button_up" from="MarginContainer/VBoxContainer/MarginContainer2/Start Game Button" to="." method="_on_Start_Game_Button_button_up"]
 [connection signal="pressed" from="MarginContainer/VBoxContainer/MarginContainer2/Start Game Button" to="." method="_on_Start_Game_Button_pressed"]
