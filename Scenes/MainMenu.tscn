@@ -121,7 +121,18 @@ custom_fonts/font = SubResource( 2 )
 custom_styles/hover = SubResource( 6 )
 text = "Credits"
 
+[node name="MarginContainer4" type="MarginContainer" parent="HBoxContainer"]
+margin_top = 207.0
+margin_right = 301.0
+margin_bottom = 227.0
+
+[node name="Quit Game Button" type="Button" parent="HBoxContainer/MarginContainer4"]
+margin_right = 301.0
+margin_bottom = 20.0
+text = "Quit"
+
 [connection signal="button_up" from="HBoxContainer/MarginContainer/Start Game Button" to="." method="_on_Start_Game_Button_button_up"]
 [connection signal="pressed" from="HBoxContainer/MarginContainer/Start Game Button" to="." method="_on_Start_Game_Button_pressed"]
 [connection signal="button_up" from="HBoxContainer/MarginContainer2/Controls Button" to="." method="_on_Controls_Button_button_up"]
 [connection signal="button_up" from="HBoxContainer/MarginContainer3/Credits Button" to="." method="_on_Credits_Button_button_up"]
+[connection signal="button_up" from="HBoxContainer/MarginContainer4/Quit Game Button" to="." method="_on_Quit_Game_Button_button_up"]
