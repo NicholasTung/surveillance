@@ -1,7 +1,7 @@
 [gd_scene load_steps=10 format=2]
 
 [ext_resource path="res://Inconsolata-Black.ttf" type="DynamicFontData" id=1]
-[ext_resource path="res://png/Monitor.png" type="Texture" id=2]
+[ext_resource path="res://png/Monitor+icon.png" type="Texture" id=2]
 [ext_resource path="res://Scenes/MainMenu.gd" type="Script" id=3]
 [ext_resource path="res://Scenes/OpeningScene.tscn" type="PackedScene" id=4]
 
@@ -128,7 +128,7 @@ margin_bottom = 227.0
 
 [node name="Quit Game Button" type="Button" parent="HBoxContainer/MarginContainer4"]
 margin_right = 306.0
-margin_bottom = 49.0
+margin_bottom = 20.0
 text = "Quit"
 
 [connection signal="button_up" from="HBoxContainer/MarginContainer/Start Game Button" to="." method="_on_Start_Game_Button_button_up"]
