@@ -103,6 +103,7 @@ margin_bottom = 89.0
 color = Color( 1, 0.803922, 0.388235, 1 )
 
 [node name="MarginContainer2" type="MarginContainer" parent="."]
+
 margin_left = 200.0
 margin_top = 420.0
 margin_right = 429.0
