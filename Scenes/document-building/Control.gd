@@ -1,4 +1,4 @@
-extends Node2D
+extends Control
 
 
 # Declare member variables here. Examples:
@@ -8,7 +8,9 @@ extends Node2D
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
-	pass # Replace with function body.
+	$TextureProgress.value=50
+	
+
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
@@ -16,6 +18,6 @@ func _ready():
 #	pass
 
 
-func _on_Button_button_up():
-	#get_tree().change_scene("res://Scenes/OpeningScene.tscn")
-	get_tree().change_scene("res://Scenes/document-building/GameUI.tscn")
+#func _on_Timer_timeout():
+	#$ProgressBar.value+=1
+	#$TextureProgress.value+=1

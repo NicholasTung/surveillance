@@ -1,4 +1,4 @@
-extends Node2D
+extends VBoxContainer
 
 
 # Declare member variables here. Examples:
@@ -11,11 +11,8 @@ func _ready():
 	pass # Replace with function body.
 
 
+
+
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 #func _process(delta):
 #	pass
-
-
-func _on_Button_button_up():
-	#get_tree().change_scene("res://Scenes/OpeningScene.tscn")
-	get_tree().change_scene("res://Scenes/document-building/GameUI.tscn")
