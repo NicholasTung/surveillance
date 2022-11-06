@@ -6,7 +6,6 @@
 [node name="Node" type="Node"]
 
 [node name="SummaryDocument" parent="." instance=ExtResource( 1 )]
-next_case_summary_scene = "res://Scenes/Cases/day-1/1-1-john-smith.tscn"
 
 [node name="SummaryPhoto" parent="SummaryDocument/VBoxContainer/HeaderContainer" index="0"]
 margin_right = 92.0
@@ -21,3 +20,4 @@ margin_left = 92.0
 
 [editable path="SummaryDocument"]
 [editable path="SummaryDocument/VBoxContainer/HeaderContainer/SummaryPhoto"]
+[editable path="SummaryDocument/VBoxContainer/AuxDocs"]
