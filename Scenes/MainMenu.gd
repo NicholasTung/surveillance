@@ -12,5 +12,9 @@ func _on_Credits_Button_button_up():
 	get_tree().change_scene("res://Scenes/Credits Page.tscn")
 
 #https://godotengine.org/qa/554/is-there-a-way-to-close-a-game-using-gdscript
-func _on_Quit_Game_Button_button_up():
+func _on_Quit_button_up():
 	get_tree().quit()
+func _on_TextureButton_button_up():
+	get_node("AnimationPlayer").play("fade")
+func _on_Quit_mouse_entered():
+	pass
