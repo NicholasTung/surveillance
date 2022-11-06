@@ -1,0 +1,12 @@
+[gd_scene format=2]
+
+[node name="TextDocument" type="PanelContainer"]
+margin_right = 14.0
+margin_bottom = 14.0
+
+[node name="RichTextLabel" type="RichTextLabel" parent="."]
+margin_left = 7.0
+margin_top = 7.0
+margin_right = 7.0
+margin_bottom = 7.0
+text = "sdfdsfsdfd"
