@@ -1,6 +1,5 @@
 extends Node2D
 
-
 const SummaryAuxDocLink = preload("SummaryDocument/components/SummaryAuxDocLink.tscn")
 onready var doc_viewer = get_node("PanelContainer/VBoxContainer/DocumentViewer")
 
