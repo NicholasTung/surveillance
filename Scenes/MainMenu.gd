@@ -17,4 +17,8 @@ func _on_Quit_button_up():
 func _on_TextureButton_button_up():
 	get_node("AnimationPlayer").play("fade")
 func _on_Quit_mouse_entered():
-	pass
+	get_node("HBoxContainer/MarginContainer4/Quit").get("custom_fonts/font").set_size(40)
+	get_node("HBoxContainer/MarginContainer4/Quit").set_text("You sure?")
+func _on_Quit_mouse_exited():
+	get_node("HBoxContainer/MarginContainer4/Quit").get("custom_fonts/font").set_size(40)
+	get_node("HBoxContainer/MarginContainer4/Quit").set_text("Quit")
