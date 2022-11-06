@@ -11,6 +11,7 @@
 margin_right = 92.0
 
 [node name="TextureRect" parent="SummaryDocument/VBoxContainer/HeaderContainer/SummaryPhoto" index="0"]
+margin_top = 38.0
 margin_right = 62.0
 margin_bottom = 70.0
 texture = ExtResource( 2 )
