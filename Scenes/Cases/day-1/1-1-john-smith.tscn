@@ -9,10 +9,12 @@
 
 [node name="SummaryDocument" parent="." instance=ExtResource( 1 )]
 next_case_scene_path = "res://Scenes/Cases/day-1/1-2-mary-smith.tscn"
+guilt_pred = 90
+should_arrest = true
 
 [node name="VBoxContainer" parent="SummaryDocument" index="0"]
 margin_right = 1012.0
-margin_bottom = 744.0
+margin_bottom = 925.0
 
 [node name="HeaderContainer" parent="SummaryDocument/VBoxContainer" index="0"]
 margin_right = 1012.0
@@ -41,29 +43,37 @@ age = 18
 [node name="SummarySection" parent="SummaryDocument/VBoxContainer" index="1" instance=ExtResource( 3 )]
 margin_top = 534.0
 margin_right = 1012.0
-margin_bottom = 609.0
-title = "Custom Section Title 1"
-body = "shpgasdhgp9dsahfasdpg9udosahf;sdafsdaghdasof"
+margin_bottom = 684.0
+title = "Crime"
+body = "Suspected of conspiring to commit terrorist acts against Kilo City and its citizens"
 
 [node name="SummarySection2" parent="SummaryDocument/VBoxContainer" index="2" instance=ExtResource( 3 )]
-margin_top = 609.0
-margin_right = 1012.0
-margin_bottom = 684.0
-title = "CUSTOM SECTION TITLE 2"
-body = "aiopsdhfgsdapgohasdfd"
-
-[node name="AuxDocs" parent="SummaryDocument/VBoxContainer" index="3"]
 margin_top = 684.0
 margin_right = 1012.0
-margin_bottom = 744.0
+margin_bottom = 834.0
+title = "Evidence"
+body = "Activity on bombbuildingenthusiasts.com"
+
+[node name="AuxDocs" parent="SummaryDocument/VBoxContainer" index="3"]
+margin_top = 834.0
+margin_right = 1012.0
+margin_bottom = 925.0
 
 [node name="LinkContainer" parent="SummaryDocument/VBoxContainer/AuxDocs" index="0"]
 margin_right = 982.0
 
-[node name="TextDocument" parent="." instance=ExtResource( 4 )]
+[node name="Label" parent="SummaryDocument/VBoxContainer/AuxDocs/LinkContainer" index="0"]
+margin_right = 952.0
+
+[node name="HistoryDoc" parent="." instance=ExtResource( 4 )]
+aux_doc_filename = "history.txt"
+
+[node name="RichTextLabel" parent="HistoryDoc" index="0"]
+text = "https://bombbuildingenthusiasts.com/kilo_city"
 
 [node name="TextDocument2" parent="." instance=ExtResource( 4 )]
 
 [editable path="SummaryDocument"]
 [editable path="SummaryDocument/VBoxContainer/HeaderContainer/SummaryPhoto"]
 [editable path="SummaryDocument/VBoxContainer/AuxDocs"]
+[editable path="HistoryDoc"]
