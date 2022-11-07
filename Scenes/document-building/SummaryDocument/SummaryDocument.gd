@@ -1,16 +1,16 @@
 extends ScrollContainer
 
 export var next_case_scene_path = ""
+export var guilt_pred = 50
+export var should_arrest = false
 
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
 #	add_photo(photo_instance)
 #	add_overview(overview_instance)
+	pass
 
-	for sib in get_parent().get_children():
-		print(get_parent())
-		print(sib)
 
 func add_photo(photo_instance_param):
 	$VBoxContainer/HeaderContainer.add_child(photo_instance_param)
