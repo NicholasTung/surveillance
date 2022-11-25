@@ -1,0 +1,13 @@
+[gd_scene load_steps=3 format=2]
+
+[ext_resource path="res://Scenes/Controls Page.gd" type="Script" id=2]
+[ext_resource path="res://png/Monitor.png" type="Texture" id=3]
+
+[node name="Controls Page" type="Node2D"]
+script = ExtResource( 2 )
+
+[node name="TextureRect" type="TextureRect" parent="."]
+margin_right = 1024.0
+margin_bottom = 603.0
+rect_scale = Vector2( 1.02662, 1.00636 )
+texture = ExtResource( 3 )
