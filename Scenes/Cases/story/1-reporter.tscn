@@ -1,0 +1,79 @@
+[gd_scene load_steps=5 format=2]
+
+[ext_resource path="res://Scenes/document-building/SummaryDocument/SummaryDocument.tscn" type="PackedScene" id=1]
+[ext_resource path="res://Scenes/document-building/SummaryDocument/components/SummarySection.tscn" type="PackedScene" id=2]
+[ext_resource path="res://Scenes/document-building/TextDocument/TextDocument.tscn" type="PackedScene" id=3]
+[ext_resource path="res://png/Reporter person.PNG" type="Texture" id=4]
+
+[node name="Case" type="Control"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+
+[node name="SummaryDocument" parent="." instance=ExtResource( 1 )]
+next_case_scene_path = "res://Scenes/Cases/story/3-watchdog.tscn"
+guilt_pred = 20
+
+[node name="VBoxContainer" parent="SummaryDocument" index="0"]
+margin_right = 1012.0
+margin_bottom = 922.0
+
+[node name="HeaderContainer" parent="SummaryDocument/VBoxContainer" index="0"]
+margin_right = 1012.0
+margin_bottom = 531.0
+
+[node name="SummaryPhoto" parent="SummaryDocument/VBoxContainer/HeaderContainer" index="0"]
+margin_right = 528.0
+margin_bottom = 531.0
+
+[node name="TextureRect" parent="SummaryDocument/VBoxContainer/HeaderContainer/SummaryPhoto" index="0"]
+margin_right = 498.0
+margin_bottom = 501.0
+texture = ExtResource( 4 )
+
+[node name="SummaryOverview" parent="SummaryDocument/VBoxContainer/HeaderContainer" index="1"]
+margin_left = 528.0
+margin_right = 1012.0
+margin_bottom = 531.0
+fullname = "Robert Lewis"
+age = 41
+
+[node name="Background" parent="SummaryDocument/VBoxContainer" index="1" instance=ExtResource( 2 )]
+margin_top = 531.0
+margin_right = 1012.0
+margin_bottom = 681.0
+title = "Background"
+body = "Robert Lewis is a technology journalist at The Kilo City Times. A graduate from Brownstone’s top-ranked journalism school, Lewis has been covering up-and-coming technology for over a decade. He primarily focuses on technology in the private sector, but his pieces have recently taken a turn towards the government."
+
+[node name="SuspiciousActivity" parent="SummaryDocument/VBoxContainer" index="2" instance=ExtResource( 2 )]
+margin_top = 681.0
+margin_right = 1012.0
+margin_bottom = 831.0
+title = "Suspicious Activity"
+body = "His most recent article, The Rise of Predictive Policing in Kilo City, details changes in the KCPD’s policing policies with concerning detail. The release of this article brings into question how he obtained this sensitive information. Additionally, the article threatens to undermine the KCPD’s policing efforts, potentially increasing levels of dangerous crime in the city. However, Lewis has proven to be a reputable journalist over the past decade. He has no prior offenses. A transcript of his article has been attached."
+
+[node name="AuxDocs" parent="SummaryDocument/VBoxContainer" index="3"]
+margin_top = 831.0
+margin_right = 1012.0
+margin_bottom = 922.0
+
+[node name="LinkContainer" parent="SummaryDocument/VBoxContainer/AuxDocs" index="0"]
+margin_right = 982.0
+
+[node name="Label" parent="SummaryDocument/VBoxContainer/AuxDocs/LinkContainer" index="0"]
+margin_right = 952.0
+
+[node name="article_text" parent="." instance=ExtResource( 3 )]
+aux_doc_filename = "article_text.txt"
+
+[node name="RichTextLabel" parent="article_text" index="0"]
+text = "For years, the Kilo City Police Department (KCPD) has been building out its systems to proactively tackle crime. While past department leadership approached this problem by investigating crimes that happened, the KCPD now employs a different strategy. Anonymous tips and police judgements help to identify suspicious individuals that may need to be investigated further. These details about individuals are then processed in the KCPD’s internal review system by full-time reviewers. If an individual is deemed noteworthy, the department will take further action. However, this process is intensive, time-consuming, and in dire need of an upgrade.
+
+Meet DICTOR, the new tool of the KCPD. When investigators enter information about suspicious persons into the internal review system, DICTOR processes all of the details about a person and their activity. It takes this dense information and summarizes it for human reviewers. These automatically-generated summary reports strip out extraneous details from an individual’s file, allowing reviewers within the system to more efficiently do their job.
+
+DICTOR also makes probabilistic predictions about the danger level of processed individuals. The KCPD claims that DICTOR has been trained on case files of thousands of convicted criminals. The department stated that DICTOR accurately predicts how dangerous a person is over 98% of the time. DICTOR will be implemented as a tool to help internal reviewers that are struggling to efficiently and accurately categorize suspicious individuals. The system’s predictions will aid reviewers in doing their job.
+"
+
+[editable path="SummaryDocument"]
+[editable path="SummaryDocument/VBoxContainer/HeaderContainer/SummaryPhoto"]
+[editable path="SummaryDocument/VBoxContainer/AuxDocs"]
+[editable path="article_text"]
