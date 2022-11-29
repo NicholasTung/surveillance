@@ -1,9 +1,8 @@
-[gd_scene load_steps=10 format=2]
+[gd_scene load_steps=8 format=2]
 
 [ext_resource path="res://Scenes/Intro/Intro2.gd" type="Script" id=1]
 [ext_resource path="res://Inconsolata-Black.ttf" type="DynamicFontData" id=2]
 [ext_resource path="res://png/Monitor.png" type="Texture" id=3]
-[ext_resource path="res://png/greenbutton.png" type="Texture" id=4]
 
 [sub_resource type="DynamicFont" id=1]
 size = 25
@@ -40,13 +39,9 @@ tracks/0/keys = {
 "values": [ 0.0, 1.0 ]
 }
 
-[sub_resource type="StyleBoxTexture" id=8]
-texture = ExtResource( 4 )
-region_rect = Rect2( 0, 0, 224, 49 )
-
-[sub_resource type="StyleBoxTexture" id=4]
-texture = ExtResource( 4 )
-region_rect = Rect2( 0, 0, 224, 49 )
+[sub_resource type="DynamicFont" id=4]
+size = 25
+font_data = ExtResource( 2 )
 
 [node name="Opening Scene" type="Node2D"]
 position = Vector2( 0, 38 )
@@ -82,17 +77,6 @@ playback_speed = 0.6
 anims/RESET = SubResource( 2 )
 anims/type = SubResource( 3 )
 
-[node name="MarginContainer4" type="MarginContainer" parent="."]
-margin_left = 70.0
-margin_top = 408.0
-margin_right = 955.0
-margin_bottom = 497.0
-
-[node name="ColorRect" type="ColorRect" parent="MarginContainer4"]
-margin_right = 885.0
-margin_bottom = 89.0
-color = Color( 1, 0.803922, 0.388235, 1 )
-
 [node name="MarginContainer2" type="MarginContainer" parent="."]
 margin_left = 348.0
 margin_top = 420.0
@@ -102,8 +86,8 @@ margin_bottom = 484.0
 [node name="Button" type="Button" parent="MarginContainer2"]
 margin_right = 300.0
 margin_bottom = 64.0
-custom_styles/hover = SubResource( 8 )
-custom_styles/normal = SubResource( 4 )
+custom_fonts/font = SubResource( 4 )
+text = "Start the Day"
 
 [connection signal="animation_finished" from="MarginContainer/AnimationPlayer" to="." method="_on_AnimationPlayer_animation_finished"]
 [connection signal="button_up" from="MarginContainer2/Button" to="." method="_on_Button_button_up"]

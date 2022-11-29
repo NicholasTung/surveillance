@@ -2,7 +2,7 @@
 
 [ext_resource path="res://Scenes/Intro/Intro5.gd" type="Script" id=1]
 [ext_resource path="res://Inconsolata-Black.ttf" type="DynamicFontData" id=2]
-[ext_resource path="res://png/Monitor+icon.png" type="Texture" id=3]
+[ext_resource path="res://png/MonitorwAI.png" type="Texture" id=3]
 [ext_resource path="res://png/Capital+person.png" type="Texture" id=4]
 
 [sub_resource type="DynamicFont" id=1]
@@ -56,7 +56,7 @@ rect_scale = Vector2( 1.0248, 0.990458 )
 texture = ExtResource( 3 )
 
 [node name="Testpfp" type="Sprite" parent="."]
-position = Vector2( 190.125, 290 )
+position = Vector2( 284, 292 )
 scale = Vector2( 0.489872, 0.506329 )
 texture = ExtResource( 4 )
 
@@ -84,26 +84,15 @@ playback_speed = 0.2
 anims/RESET = SubResource( 2 )
 anims/type = SubResource( 3 )
 
-[node name="MarginContainer4" type="MarginContainer" parent="."]
-margin_left = 70.0
-margin_top = 408.0
-margin_right = 955.0
-margin_bottom = 497.0
-
-[node name="ColorRect" type="ColorRect" parent="MarginContainer4"]
-margin_right = 885.0
-margin_bottom = 89.0
-color = Color( 1, 0.803922, 0.388235, 1 )
-
 [node name="MarginContainer2" type="MarginContainer" parent="."]
-margin_left = 348.0
-margin_top = 420.0
-margin_right = 648.0
-margin_bottom = 484.0
+margin_left = 155.0
+margin_top = 421.0
+margin_right = 413.0
+margin_bottom = 482.0
 
 [node name="Button" type="Button" parent="MarginContainer2"]
-margin_right = 300.0
-margin_bottom = 64.0
+margin_right = 258.0
+margin_bottom = 61.0
 custom_fonts/font = SubResource( 4 )
 text = "Investigate Him"
 
