@@ -9,7 +9,7 @@ var current_case_summary
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	# testing
-	current_case = preload("res://Scenes/Cases/day-1/1-1-john-smith.tscn").instance()
+	current_case = preload("res://Scenes/Cases/story/1-reporter.tscn").instance()
 	set_case()
 
 

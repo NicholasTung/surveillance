@@ -1,0 +1,96 @@
+[gd_scene load_steps=5 format=2]
+
+[ext_resource path="res://Scenes/document-building/SummaryDocument/SummaryDocument.tscn" type="PackedScene" id=1]
+[ext_resource path="res://Scenes/document-building/SummaryDocument/components/SummarySection.tscn" type="PackedScene" id=2]
+[ext_resource path="res://png/Female Commenter.PNG" type="Texture" id=3]
+[ext_resource path="res://Scenes/document-building/TextDocument/TextDocument.tscn" type="PackedScene" id=4]
+
+[node name="Case" type="Control"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+
+[node name="SummaryDocument" parent="." instance=ExtResource( 1 )]
+guilt_pred = 80
+should_arrest = true
+
+[node name="VBoxContainer" parent="SummaryDocument" index="0"]
+margin_right = 1012.0
+margin_bottom = 926.0
+
+[node name="HeaderContainer" parent="SummaryDocument/VBoxContainer" index="0"]
+margin_right = 1012.0
+margin_bottom = 535.0
+
+[node name="SummaryPhoto" parent="SummaryDocument/VBoxContainer/HeaderContainer" index="0"]
+margin_right = 525.0
+margin_bottom = 535.0
+
+[node name="TextureRect" parent="SummaryDocument/VBoxContainer/HeaderContainer/SummaryPhoto" index="0"]
+margin_right = 495.0
+margin_bottom = 505.0
+texture = ExtResource( 3 )
+
+[node name="SummaryOverview" parent="SummaryDocument/VBoxContainer/HeaderContainer" index="1"]
+margin_left = 525.0
+margin_right = 1012.0
+margin_bottom = 535.0
+fullname = "Kaitlyn Bernard"
+age = 32
+
+[node name="Background" parent="SummaryDocument/VBoxContainer" index="1" instance=ExtResource( 2 )]
+margin_top = 535.0
+margin_right = 1012.0
+margin_bottom = 685.0
+title = "Background"
+body = "Kaitlyn Bernard is a former software engineer on Severthum’s machine learning team. After dropping out of college, Bernard was employed at numerous companies as a software engineer. After leaving Severthum last year, she started self-publishing blog posts and built a small following."
+
+[node name="SuspiciousActivities" parent="SummaryDocument/VBoxContainer" index="2" instance=ExtResource( 2 )]
+margin_top = 685.0
+margin_right = 1012.0
+margin_bottom = 835.0
+title = "Suspicious activities"
+body = "Bernard recently published a new blog post on her personal website. It gives an overview of DICTOR’s development and makes serious accusations about how it might make inaccurate predictions. The post is also based on highly-classified information that the public is not meant to know. A copy of the blog post has been attached. Recently visited websites show that Bernard frequents several hacking websites and forums. Bernard has a history of civil disobedience. She was arrested at a protest 3 years ago."
+
+[node name="AuxDocs" parent="SummaryDocument/VBoxContainer" index="3"]
+margin_top = 835.0
+margin_right = 1012.0
+margin_bottom = 926.0
+
+[node name="LinkContainer" parent="SummaryDocument/VBoxContainer/AuxDocs" index="0"]
+margin_right = 982.0
+
+[node name="Label" parent="SummaryDocument/VBoxContainer/AuxDocs/LinkContainer" index="0"]
+margin_right = 952.0
+
+[node name="blog_post" parent="." instance=ExtResource( 4 )]
+aux_doc_filename = "blog_post.txt"
+
+[node name="RichTextLabel" parent="blog_post" index="0"]
+text = "There has been some attention on Kilo City’s new predictive policing tool, DICTOR, recently. After the Robert Lewis article about the changing policies of the KCPD, the public has noticed. There has been some chatter among citizens on social media and various Internet forums, and there is a lot of misinformation flying around. I’m here to clear up those misconceptions and dive into what DICTOR is, how it works, and why the public is concerned.
+
+DICTOR is supposed to help the KCPD predict criminal activity based on past behaviors of citizens. This predictive model was trained and evaluated on thousands of past case decisions. After some digging, I discovered that the model was trained on ~4000 cases of convicted criminals, as well as about ~200 cases of people that turned out to be uninteresting. However, internal documents that I have obtained show that the KCPD’s internal review system typically throws out 70% of the suspicious persons cases. If ~70% of the individuals that the model processes are not worthy of further investigation, why was such a large proportion of its training set made of criminals?
+
+Training on past case decisions is already a loaded decision. The criminal justice system is imperfect, and Kilo City’s is no different. Studies have shown that past criminal convictions exhibit signs of bias against marginalized groups of people. Who’s to say that using DICTOR, an AI trained on such past convictions, won’t exacerbate structural injustices in Kilo City’s system?
+
+The KCPD also has not released information about DICTOR’s false-positive prediction rates. The model might accurately predict danger levels 96% of the time, but what happens when it messes up? Who knows how often law-abiding citizens are classified as suspicious? This tool is being used on us and our data, shouldn’t we know just how safe it really is for us? 
+
+All of this is just speculation on how DICTOR might be more dangerous than the KCPD claims. However, nothing is certain. Stay on the lookout for my deeper dive in next week’s post.
+"
+
+[node name="recent_websites" parent="." instance=ExtResource( 4 )]
+aux_doc_filename = "recent_websites.txt"
+
+[node name="RichTextLabel" parent="recent_websites" index="0"]
+text = "infosec.exchange
+tryhackme.com
+twitter.com
+hackthebox.com
+0x00sec.com
+ctftime.com
+reddit.com"
+
+[editable path="SummaryDocument"]
+[editable path="SummaryDocument/VBoxContainer/HeaderContainer/SummaryPhoto"]
+[editable path="SummaryDocument/VBoxContainer/AuxDocs"]
+[editable path="blog_post"]
+[editable path="recent_websites"]
