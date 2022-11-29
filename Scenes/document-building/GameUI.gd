@@ -5,6 +5,7 @@ onready var doc_viewer = get_node("PanelContainer/VBoxContainer/DocumentViewer")
 
 var current_case = null
 var current_case_summary
+var score = MoralityScore
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
@@ -51,14 +52,21 @@ func load_next_case():
 	if current_case_summary.next_case_scene_path != "":
 		current_case = load(current_case_summary.next_case_scene_path).instance()
 		set_case()
+	else:
+		if score.get_score() >= 0:
+			get_tree().change_scene("res://End_Scense/Ending_1.tscn")
+		else:
+			get_tree().change_scene("res://End_Scense/Ending_2.tscn")
 
 
 func eval_verdict(arrested):
 	var verdict_alert_node = $PanelContainer/VBoxContainer/VerdictAlert
 	if current_case_summary.should_arrest == arrested:
+		score.set_score(score.get_score() + 2)
 		verdict_alert_node.visible = false
 	else:
 		# animate this to slide in or something maybe
+		score.set_score(score.get_score() - 3)
 		verdict_alert_node.text = "MSG: Your decision has been reviewed and has been determined to go against KCPD guidelines."
 		verdict_alert_node.visible = true
 
@@ -68,7 +76,6 @@ func _on_AuxDocLink_pressed(aux_doc_ref):
 
 func _on_IgnoreButton_button_up():
 	process_case_decision(false)
-	#get_tree().change_scene("res://Scenes/Intro/intro1.tscn")
 
 
 func _on_ArrestButton_button_up():
