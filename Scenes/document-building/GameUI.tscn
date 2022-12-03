@@ -1,10 +1,15 @@
-[gd_scene load_steps=4 format=2]
+[gd_scene load_steps=6 format=2]
 
 [ext_resource path="res://Scenes/document-building/GameUI.gd" type="Script" id=1]
 [ext_resource path="res://png/progressbar.PNG" type="Texture" id=2]
+[ext_resource path="res://Inconsolata-Black.ttf" type="DynamicFontData" id=3]
 
 [sub_resource type="StyleBoxFlat" id=1]
 bg_color = Color( 0.0823529, 0.839216, 0.964706, 1 )
+
+[sub_resource type="DynamicFont" id=2]
+size = 18
+font_data = ExtResource( 3 )
 
 [node name="GameUI" type="Node2D"]
 position = Vector2( 1, 0 )
@@ -78,5 +83,26 @@ margin_bottom = 55.0
 size_flags_horizontal = 3
 text = "IGNORE"
 
+[node name="ColorRect" type="ColorRect" parent="."]
+margin_left = 789.0
+margin_top = 503.0
+margin_right = 1009.0
+margin_bottom = 536.0
+color = Color( 0.0509804, 0.00392157, 0.00392157, 1 )
+
+[node name="Label" type="Label" parent="."]
+margin_left = 791.0
+margin_top = 497.0
+margin_right = 1011.0
+margin_bottom = 544.0
+custom_fonts/font = SubResource( 2 )
+text = "Time: 9: 00 AM"
+align = 1
+valign = 1
+
+[node name="Timer" type="Timer" parent="."]
+autostart = true
+
 [connection signal="button_up" from="PanelContainer/VBoxContainer/DecisionCluster/ArrestButton" to="." method="_on_ArrestButton_button_up"]
 [connection signal="button_up" from="PanelContainer/VBoxContainer/DecisionCluster/IgnoreButton" to="." method="_on_IgnoreButton_button_up"]
+[connection signal="timeout" from="Timer" to="." method="_on_Timer_timeout"]

@@ -6,6 +6,8 @@ onready var doc_viewer = get_node("PanelContainer/VBoxContainer/DocumentViewer")
 var current_case = null
 var current_case_summary
 var score = MoralityScore
+var seconds: int = 0
+
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
@@ -80,3 +82,80 @@ func _on_IgnoreButton_button_up():
 
 func _on_ArrestButton_button_up():
 	process_case_decision(true)
+
+
+func _on_Timer_timeout():
+	seconds += 1
+	if seconds == 2:
+		$Label.set_text(str("Time: 9:15 AM"))
+	elif seconds == 4:
+		$Label.set_text(str("Time: 9:30 AM"))
+	elif seconds == 6:
+		$Label.set_text(str("Time: 9:45 AM"))
+	elif seconds == 8:
+		$Label.set_text(str("Time: 10:00 AM"))
+	elif seconds == 10:
+		$Label.set_text(str("Time: 10:15 AM"))
+	elif seconds == 12:
+		$Label.set_text(str("Time: 10:30 AM"))
+	elif seconds == 14:
+		$Label.set_text(str("Time: 10:45 AM"))
+	elif seconds == 16:
+		$Label.set_text(str("Time: 11:00 AM"))
+	elif seconds == 18:
+		$Label.set_text(str("Time: 11:15 AM"))
+	elif seconds == 20:
+		$Label.set_text(str("Time: 11:30 AM"))
+	elif seconds == 22:
+		$Label.set_text(str("Time: 11:45 AM"))
+	elif seconds == 24:
+		$Label.set_text(str("Time: 12:00 PM"))
+	elif seconds == 26:
+		$Label.set_text(str("Time: 12:15 PM"))
+	elif seconds == 28:
+		$Label.set_text(str("Time: 12:30 PM"))
+	elif seconds == 30:
+		$Label.set_text(str("Time: 12:45 PM"))
+	elif seconds == 32:
+		$Label.set_text(str("Time: 1:00 PM"))
+	elif seconds == 34:
+		$Label.set_text(str("Time: 1:00 PM"))
+	elif seconds == 36:
+		$Label.set_text(str("Time: 1:15 PM"))
+	elif seconds == 38:
+		$Label.set_text(str("Time: 1:30 PM"))
+	elif seconds == 40:
+		$Label.set_text(str("Time: 1:45 PM"))
+	elif seconds == 42:
+		$Label.set_text(str("Time: 2:00 PM"))
+	elif seconds == 44:
+		$Label.set_text(str("Time: 2:15 PM"))
+	elif seconds == 46:
+		$Label.set_text(str("Time: 2:30 PM"))
+	elif seconds == 48:
+		$Label.set_text(str("Time: 2:45 PM"))
+	elif seconds == 50:
+		$Label.set_text(str("Time: 3:00 PM"))
+	elif seconds == 52:
+		$Label.set_text(str("Time: 3:15 PM"))
+	elif seconds == 54:
+		$Label.set_text(str("Time: 3:30 PM"))
+	elif seconds == 56:
+		$Label.set_text(str("Time: 3:45 PM"))
+	elif seconds == 58:
+		$Label.set_text(str("Time: 4:00 PM"))
+	elif seconds == 60:
+		$Label.set_text(str("Time: 4:15 PM"))
+	elif seconds == 62:
+		$Label.set_text(str("Time: 4:30 PM"))
+	elif seconds == 64:
+		$Label.set_text(str("Time: 4:45 PM"))
+	elif seconds == 66:
+		$Label.set_text(str("Time: 5:00 PM"))
+	elif seconds == 68:
+		$Label.set_text(str("Time to Leave"))
+	elif seconds == 75:
+		if score.get_score() >= 0:
+			get_tree().change_scene("res://End_Scense/Ending_1.tscn")
+		else:
+			get_tree().change_scene("res://End_Scense/Ending_2.tscn")
