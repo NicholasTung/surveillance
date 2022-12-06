@@ -1,0 +1,77 @@
+[gd_scene load_steps=5 format=2]
+
+[ext_resource path="res://Scenes/document-building/SummaryDocument/components/SummarySection.tscn" type="PackedScene" id=1]
+[ext_resource path="res://Scenes/document-building/SummaryDocument/SummaryDocument.tscn" type="PackedScene" id=2]
+[ext_resource path="res://png/anonymous user.PNG" type="Texture" id=3]
+[ext_resource path="res://Scenes/document-building/TextDocument/TextDocument.tscn" type="PackedScene" id=4]
+
+[node name="Case" type="Control"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+
+[node name="SummaryDocument" parent="." instance=ExtResource( 2 )]
+next_case_scene_path = "res://Scenes/Cases/story/3-watchdog.tscn"
+guilt_pred = 72
+
+[node name="VBoxContainer" parent="SummaryDocument" index="0"]
+margin_right = 1012.0
+margin_bottom = 943.0
+
+[node name="HeaderContainer" parent="SummaryDocument/VBoxContainer" index="0"]
+margin_right = 1012.0
+margin_bottom = 532.0
+
+[node name="SummaryPhoto" parent="SummaryDocument/VBoxContainer/HeaderContainer" index="0"]
+margin_right = 533.0
+margin_bottom = 532.0
+
+[node name="TextureRect" parent="SummaryDocument/VBoxContainer/HeaderContainer/SummaryPhoto" index="0"]
+margin_right = 503.0
+margin_bottom = 502.0
+texture = ExtResource( 3 )
+
+[node name="SummaryOverview" parent="SummaryDocument/VBoxContainer/HeaderContainer" index="1"]
+margin_left = 533.0
+margin_right = 1012.0
+margin_bottom = 532.0
+fullname = "ANRKY"
+age = 30
+
+[node name="Background" parent="SummaryDocument/VBoxContainer" index="1" instance=ExtResource( 1 )]
+margin_top = 532.0
+margin_right = 1012.0
+margin_bottom = 687.0
+title = "Background"
+body = "An anonymous user, who goes by the username ANRKY, has kept their identity private and has been seen active in anti-government activity. Not much is known about the person behind ANRKY except for the fact that they seem to be involved in some underground activities."
+
+[node name="SuspiciousActivity" parent="SummaryDocument/VBoxContainer" index="2" instance=ExtResource( 1 )]
+margin_top = 687.0
+margin_right = 1012.0
+margin_bottom = 842.0
+title = "Suspicious activity"
+body = "ANRKY has been seen posting in various forums that discuss topics about anti-government conspiracies. They seem to have a deep hatred for the developing AI technology, and specifically hate the involvement of DICTOR in the new system. They post constant criticism against the AI system on various forum pages."
+
+[node name="AuxDocs" parent="SummaryDocument/VBoxContainer" index="3"]
+margin_top = 842.0
+margin_right = 1012.0
+margin_bottom = 943.0
+
+[node name="LinkContainer" parent="SummaryDocument/VBoxContainer/AuxDocs" index="0"]
+margin_right = 982.0
+
+[node name="Label" parent="SummaryDocument/VBoxContainer/AuxDocs/LinkContainer" index="0"]
+margin_right = 952.0
+
+[node name="forum_posts" parent="." instance=ExtResource( 4 )]
+aux_doc_filename = "forum_posts.txt"
+
+[node name="RichTextLabel" parent="forum_posts" index="0"]
+text = "Why would we trust a robot to make fair decisions?? There must be some reason the government built DICTOR!
+The government must be using DICTOR to hide their crimes!
+DOWN WITH DICTOR
+"
+
+[editable path="SummaryDocument"]
+[editable path="SummaryDocument/VBoxContainer/HeaderContainer/SummaryPhoto"]
+[editable path="SummaryDocument/VBoxContainer/AuxDocs"]
+[editable path="forum_posts"]

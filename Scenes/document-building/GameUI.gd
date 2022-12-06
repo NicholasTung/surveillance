@@ -12,7 +12,7 @@ var seconds: int = 0
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	# testing
-	current_case = preload("res://Scenes/Cases/story/1-reporter.tscn").instance()
+	current_case = preload("res://Scenes/Cases/extras/doctor.tscn").instance()
 	set_case()
 
 

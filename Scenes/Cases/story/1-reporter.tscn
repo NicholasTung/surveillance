@@ -10,7 +10,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 
 [node name="SummaryDocument" parent="." instance=ExtResource( 1 )]
-next_case_scene_path = "res://Scenes/Cases/story/3-watchdog.tscn"
+next_case_scene_path = "res://Scenes/Cases/extras/hobo.tscn"
 guilt_pred = 20
 
 [node name="VBoxContainer" parent="SummaryDocument" index="0"]

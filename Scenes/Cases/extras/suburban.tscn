@@ -1,0 +1,75 @@
+[gd_scene load_steps=5 format=2]
+
+[ext_resource path="res://Scenes/document-building/SummaryDocument/components/SummarySection.tscn" type="PackedScene" id=1]
+[ext_resource path="res://Scenes/document-building/SummaryDocument/SummaryDocument.tscn" type="PackedScene" id=2]
+[ext_resource path="res://png/BlackSurban.PNG" type="Texture" id=3]
+[ext_resource path="res://Scenes/document-building/TextDocument/TextDocument.tscn" type="PackedScene" id=4]
+
+[node name="Case" type="Control"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+
+[node name="SummaryDocument" parent="." instance=ExtResource( 2 )]
+next_case_scene_path = "res://Scenes/Cases/story/4-tech-exec.tscn"
+guilt_pred = 39
+
+[node name="VBoxContainer" parent="SummaryDocument" index="0"]
+margin_right = 1012.0
+margin_bottom = 939.0
+
+[node name="HeaderContainer" parent="SummaryDocument/VBoxContainer" index="0"]
+margin_right = 1012.0
+margin_bottom = 528.0
+
+[node name="SummaryPhoto" parent="SummaryDocument/VBoxContainer/HeaderContainer" index="0"]
+margin_right = 537.0
+margin_bottom = 528.0
+
+[node name="TextureRect" parent="SummaryDocument/VBoxContainer/HeaderContainer/SummaryPhoto" index="0"]
+margin_right = 507.0
+margin_bottom = 498.0
+texture = ExtResource( 3 )
+
+[node name="SummaryOverview" parent="SummaryDocument/VBoxContainer/HeaderContainer" index="1"]
+margin_left = 537.0
+margin_right = 1012.0
+margin_bottom = 528.0
+fullname = "Darius Jackson"
+age = 37
+
+[node name="Background" parent="SummaryDocument/VBoxContainer" index="1" instance=ExtResource( 1 )]
+margin_top = 528.0
+margin_right = 1012.0
+margin_bottom = 683.0
+title = "Background"
+body = "Darius Jackson has a wife and two kids and has a regular 9-5 office job at TechEx. He usually spends his weekends with his family doing outdoor activities or staying home and watching movies. He is an avid bird watcher."
+
+[node name="SuspiciousActivity" parent="SummaryDocument/VBoxContainer" index="2" instance=ExtResource( 1 )]
+margin_top = 683.0
+margin_right = 1012.0
+margin_bottom = 838.0
+title = "Suspicious activity"
+body = "Jackson has been flagged by DICTOR’s experimental proactive identification system. He has made no actions that are directly suspicious."
+
+[node name="AuxDocs" parent="SummaryDocument/VBoxContainer" index="3"]
+margin_top = 838.0
+margin_right = 1012.0
+margin_bottom = 939.0
+
+[node name="LinkContainer" parent="SummaryDocument/VBoxContainer/AuxDocs" index="0"]
+margin_right = 982.0
+
+[node name="Label" parent="SummaryDocument/VBoxContainer/AuxDocs/LinkContainer" index="0"]
+margin_right = 952.0
+
+[node name="search_history" parent="." instance=ExtResource( 4 )]
+aux_doc_filename = "search_history.txt"
+
+[node name="RichTextLabel" parent="search_history" index="0"]
+text = "how to efficiently cut paper
+what bird has red and blue feathers"
+
+[editable path="SummaryDocument"]
+[editable path="SummaryDocument/VBoxContainer/HeaderContainer/SummaryPhoto"]
+[editable path="SummaryDocument/VBoxContainer/AuxDocs"]
+[editable path="search_history"]

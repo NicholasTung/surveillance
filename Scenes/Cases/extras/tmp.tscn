@@ -1,0 +1,37 @@
+[gd_scene load_steps=3 format=2]
+
+[ext_resource path="res://Scenes/document-building/SummaryDocument/components/SummarySection.tscn" type="PackedScene" id=1]
+[ext_resource path="res://Scenes/document-building/SummaryDocument/SummaryDocument.tscn" type="PackedScene" id=2]
+
+[node name="Case" type="Control"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+
+[node name="SummaryDocument" parent="." instance=ExtResource( 2 )]
+
+[node name="VBoxContainer" parent="SummaryDocument" index="0"]
+margin_bottom = 511.0
+
+[node name="TextureRect" parent="SummaryDocument/VBoxContainer/HeaderContainer/SummaryPhoto" index="0"]
+margin_top = 70.0
+margin_bottom = 70.0
+
+[node name="Background" parent="SummaryDocument/VBoxContainer" index="1" instance=ExtResource( 1 )]
+margin_top = 100.0
+margin_right = 1024.0
+margin_bottom = 255.0
+title = "Background"
+
+[node name="SuspiciousActivity" parent="SummaryDocument/VBoxContainer" index="2" instance=ExtResource( 1 )]
+margin_top = 255.0
+margin_right = 1024.0
+margin_bottom = 410.0
+title = "Suspicious activity"
+
+[node name="AuxDocs" parent="SummaryDocument/VBoxContainer" index="3"]
+margin_top = 410.0
+margin_bottom = 511.0
+
+[editable path="SummaryDocument"]
+[editable path="SummaryDocument/VBoxContainer/HeaderContainer/SummaryPhoto"]
+[editable path="SummaryDocument/VBoxContainer/AuxDocs"]

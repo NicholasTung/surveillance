@@ -1,0 +1,88 @@
+[gd_scene load_steps=5 format=2]
+
+[ext_resource path="res://Scenes/document-building/SummaryDocument/components/SummarySection.tscn" type="PackedScene" id=1]
+[ext_resource path="res://Scenes/document-building/SummaryDocument/SummaryDocument.tscn" type="PackedScene" id=2]
+[ext_resource path="res://png/CivilianTweeter.PNG" type="Texture" id=3]
+[ext_resource path="res://Scenes/document-building/TextDocument/TextDocument.tscn" type="PackedScene" id=4]
+
+[node name="Case" type="Control"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+
+[node name="SummaryDocument" parent="." instance=ExtResource( 2 )]
+next_case_scene_path = "res://Scenes/Cases/extras/forum.tscn"
+guilt_pred = 80
+
+[node name="VBoxContainer" parent="SummaryDocument" index="0"]
+margin_right = 1012.0
+margin_bottom = 942.0
+
+[node name="HeaderContainer" parent="SummaryDocument/VBoxContainer" index="0"]
+margin_right = 1012.0
+margin_bottom = 531.0
+
+[node name="SummaryPhoto" parent="SummaryDocument/VBoxContainer/HeaderContainer" index="0"]
+margin_right = 529.0
+margin_bottom = 531.0
+
+[node name="TextureRect" parent="SummaryDocument/VBoxContainer/HeaderContainer/SummaryPhoto" index="0"]
+margin_right = 499.0
+margin_bottom = 501.0
+texture = ExtResource( 3 )
+
+[node name="SummaryOverview" parent="SummaryDocument/VBoxContainer/HeaderContainer" index="1"]
+margin_left = 529.0
+margin_right = 1012.0
+margin_bottom = 531.0
+fullname = "Perlie Roselyn"
+age = 24
+
+[node name="Background" parent="SummaryDocument/VBoxContainer" index="1" instance=ExtResource( 1 )]
+margin_top = 531.0
+margin_right = 1012.0
+margin_bottom = 686.0
+title = "Background"
+body = "Perlie Roselyn is a marketing consultant focusing on social media platforms. After graduating from Kilo City College, Roselyn started her own agency helping to grow small businesses. She has built a following on social media making content about growing a social media presence."
+
+[node name="SuspiciousActivity" parent="SummaryDocument/VBoxContainer" index="2" instance=ExtResource( 1 )]
+margin_top = 686.0
+margin_right = 1012.0
+margin_bottom = 841.0
+title = "Suspicious activity"
+body = "Roselyn recently wrote a series of small posts detailing a recent arrest involving her mother. The thread is attached below. In the thread, she makes unfounded claims about the KCPD’s systems and efficacy. These posts undermine the KCPD’s ability to effectively police the city while damaging public trust in the system. Additional action could reduce the spread of such misinformation. Roselyn has one prior offense, committed when she was a minor. This offense was “expunged” from her record when she turned 18."
+
+[node name="AuxDocs" parent="SummaryDocument/VBoxContainer" index="3"]
+margin_top = 841.0
+margin_right = 1012.0
+margin_bottom = 942.0
+
+[node name="LinkContainer" parent="SummaryDocument/VBoxContainer/AuxDocs" index="0"]
+margin_right = 982.0
+
+[node name="Label" parent="SummaryDocument/VBoxContainer/AuxDocs/LinkContainer" index="0"]
+margin_right = 952.0
+
+[node name="microblog_thread" parent="." instance=ExtResource( 4 )]
+
+[node name="RichTextLabel" parent="microblog_thread" index="0"]
+text = "hey y’all im taking a break from my usual content to talk about how my mom was wrongly arrested by the KCPD 1/
+
+two days ago my mom and dad were just enjoying their weekend in their apartment when the KCPD broke into the apartment and arrested my mom 2/
+
+they claimed she was identified as a suspicious individual and won’t tell us anything else. i think it has to do with the AI that was in the news a while ago 3/
+
+i can't believe what's happening to my mom she's been wrongly accused of suspicious activity and it's tearing our family apart 4/
+
+my mom is the most loving and caring person I know. she would never hurt anyone and she doesn't deserve this. 5/
+
+we are doing everything we can to clear her name and prove her innocence. it's been a long and difficult journey, but we won't give up 6/
+
+we need justice for my mom. she has been through so much and we won't rest until she's back home where she belongs. 7/
+
+If anyone has any experience with unfair arrests by the KCPD, please come forward. We need all the support we can get. 8/8
+"
+
+[editable path="SummaryDocument"]
+[editable path="SummaryDocument/VBoxContainer/HeaderContainer/SummaryPhoto"]
+[editable path="SummaryDocument/VBoxContainer/AuxDocs"]
+[editable path="microblog_thread"]

@@ -1,0 +1,77 @@
+[gd_scene load_steps=5 format=2]
+
+[ext_resource path="res://Scenes/document-building/SummaryDocument/components/SummarySection.tscn" type="PackedScene" id=1]
+[ext_resource path="res://Scenes/document-building/SummaryDocument/SummaryDocument.tscn" type="PackedScene" id=2]
+[ext_resource path="res://png/Hobo Guy.PNG" type="Texture" id=3]
+[ext_resource path="res://Scenes/document-building/TextDocument/TextDocument.tscn" type="PackedScene" id=4]
+
+[node name="Case" type="Control"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+
+[node name="SummaryDocument" parent="." instance=ExtResource( 2 )]
+next_case_scene_path = "res://Scenes/Cases/story/2-microblogger.tscn"
+guilt_pred = 62
+
+[node name="VBoxContainer" parent="SummaryDocument" index="0"]
+margin_right = 1012.0
+margin_bottom = 944.0
+
+[node name="HeaderContainer" parent="SummaryDocument/VBoxContainer" index="0"]
+margin_right = 1012.0
+margin_bottom = 533.0
+
+[node name="SummaryPhoto" parent="SummaryDocument/VBoxContainer/HeaderContainer" index="0"]
+margin_right = 535.0
+margin_bottom = 533.0
+
+[node name="TextureRect" parent="SummaryDocument/VBoxContainer/HeaderContainer/SummaryPhoto" index="0"]
+margin_right = 505.0
+margin_bottom = 503.0
+texture = ExtResource( 3 )
+
+[node name="SummaryOverview" parent="SummaryDocument/VBoxContainer/HeaderContainer" index="1"]
+margin_left = 535.0
+margin_right = 1012.0
+margin_bottom = 533.0
+fullname = "Emilio Lopez"
+age = 42
+
+[node name="Background" parent="SummaryDocument/VBoxContainer" index="1" instance=ExtResource( 1 )]
+margin_top = 533.0
+margin_right = 1012.0
+margin_bottom = 688.0
+title = "Background"
+body = "Emilio Lopez is a chronically homeless man who survives through the charitable donations of Kilo City Citizens. While having a bright future ahead of him, he failed to capitalize on his skills and fell to the bottom of the societal hierarchy. He primarily keeps to himself during daytime while keeping the company of stray animals, he is a semi-productive member of society through his employment of several part-time jobs."
+
+[node name="SuspiciousActivity" parent="SummaryDocument/VBoxContainer" index="2" instance=ExtResource( 1 )]
+margin_top = 688.0
+margin_right = 1012.0
+margin_bottom = 843.0
+title = "Suspicious activity"
+body = "Lopez’s lack of a permanent residence may become an anti-government motive. Additionally, KCPD surveillance has noticed deviations from his typical movements, indicating potential criminal activity."
+
+[node name="AuxDocs" parent="SummaryDocument/VBoxContainer" index="3"]
+margin_top = 843.0
+margin_right = 1012.0
+margin_bottom = 944.0
+
+[node name="LinkContainer" parent="SummaryDocument/VBoxContainer/AuxDocs" index="0"]
+margin_right = 982.0
+
+[node name="Label" parent="SummaryDocument/VBoxContainer/AuxDocs/LinkContainer" index="0"]
+margin_right = 952.0
+
+[node name="location_history" parent="." instance=ExtResource( 4 )]
+aux_doc_filename = "location_history.txt"
+
+[node name="RichTextLabel" parent="location_history" index="0"]
+text = "Central Park Fountain
+Yummy Food Inc.
+City Rise Apartments <DEVIATION>
+Bridge Crossing"
+
+[editable path="SummaryDocument"]
+[editable path="SummaryDocument/VBoxContainer/HeaderContainer/SummaryPhoto"]
+[editable path="SummaryDocument/VBoxContainer/AuxDocs"]
+[editable path="location_history"]
