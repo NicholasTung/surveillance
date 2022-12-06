@@ -88,7 +88,7 @@ func _on_ArrestButton_button_up():
 
 
 func _on_Timer_timeout():
-	seconds += 1
+	seconds += .25
 	if seconds == 2:
 		$Label.set_text(str("Time: 9:15 AM"))
 	elif seconds == 4:
