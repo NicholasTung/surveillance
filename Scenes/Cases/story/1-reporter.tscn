@@ -15,7 +15,7 @@ guilt_pred = 20
 
 [node name="VBoxContainer" parent="SummaryDocument" index="0"]
 margin_right = 1012.0
-margin_bottom = 922.0
+margin_bottom = 942.0
 
 [node name="HeaderContainer" parent="SummaryDocument/VBoxContainer" index="0"]
 margin_right = 1012.0
@@ -40,21 +40,21 @@ age = 41
 [node name="Background" parent="SummaryDocument/VBoxContainer" index="1" instance=ExtResource( 2 )]
 margin_top = 531.0
 margin_right = 1012.0
-margin_bottom = 681.0
+margin_bottom = 686.0
 title = "Background"
 body = "Robert Lewis is a technology journalist at The Kilo City Times. A graduate from Brownstone’s top-ranked journalism school, Lewis has been covering up-and-coming technology for over a decade. He primarily focuses on technology in the private sector, but his pieces have recently taken a turn towards the government."
 
 [node name="SuspiciousActivity" parent="SummaryDocument/VBoxContainer" index="2" instance=ExtResource( 2 )]
-margin_top = 681.0
+margin_top = 686.0
 margin_right = 1012.0
-margin_bottom = 831.0
+margin_bottom = 841.0
 title = "Suspicious Activity"
 body = "His most recent article, The Rise of Predictive Policing in Kilo City, details changes in the KCPD’s policing policies with concerning detail. The release of this article brings into question how he obtained this sensitive information. Additionally, the article threatens to undermine the KCPD’s policing efforts, potentially increasing levels of dangerous crime in the city. However, Lewis has proven to be a reputable journalist over the past decade. He has no prior offenses. A transcript of his article has been attached."
 
 [node name="AuxDocs" parent="SummaryDocument/VBoxContainer" index="3"]
-margin_top = 831.0
+margin_top = 841.0
 margin_right = 1012.0
-margin_bottom = 922.0
+margin_bottom = 942.0
 
 [node name="LinkContainer" parent="SummaryDocument/VBoxContainer/AuxDocs" index="0"]
 margin_right = 982.0

@@ -14,7 +14,7 @@ guilt_pred = 80
 should_arrest = true
 
 [node name="VBoxContainer" parent="SummaryDocument" index="0"]
-margin_right = 1012.0
+margin_right = 565.0
 margin_bottom = 926.0
 
 [node name="HeaderContainer" parent="SummaryDocument/VBoxContainer" index="0"]

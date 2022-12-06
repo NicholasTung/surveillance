@@ -1,9 +1,13 @@
-[gd_scene load_steps=3 format=2]
+[gd_scene load_steps=5 format=2]
 
 [ext_resource path="res://Scenes/document-building/TextDocument/TextDocument.gd" type="Script" id=1]
+[ext_resource path="res://Courier_Prime/CourierPrime-Regular.ttf" type="DynamicFontData" id=2]
 
 [sub_resource type="StyleBoxFlat" id=1]
 bg_color = Color( 1, 1, 1, 1 )
+
+[sub_resource type="DynamicFont" id=2]
+font_data = ExtResource( 2 )
 
 [node name="TextDocument" type="PanelContainer"]
 margin_right = 14.0
@@ -15,4 +19,5 @@ script = ExtResource( 1 )
 margin_right = 14.0
 margin_bottom = 14.0
 custom_colors/default_color = Color( 0, 0, 0, 1 )
+custom_fonts/normal_font = SubResource( 2 )
 text = "sdfdsfsdfd"
