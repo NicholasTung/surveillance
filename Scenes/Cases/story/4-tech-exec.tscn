@@ -1,0 +1,92 @@
+[gd_scene load_steps=5 format=2]
+
+[ext_resource path="res://Scenes/document-building/SummaryDocument/components/SummarySection.tscn" type="PackedScene" id=1]
+[ext_resource path="res://Scenes/document-building/SummaryDocument/SummaryDocument.tscn" type="PackedScene" id=2]
+[ext_resource path="res://png/TechExec.PNG" type="Texture" id=3]
+[ext_resource path="res://Scenes/document-building/TextDocument/TextDocument.tscn" type="PackedScene" id=4]
+
+[node name="Case" type="Control"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+
+[node name="SummaryDocument" parent="." instance=ExtResource( 2 )]
+guilt_pred = 35
+should_arrest = true
+
+[node name="VBoxContainer" parent="SummaryDocument" index="0"]
+margin_right = 1012.0
+margin_bottom = 947.0
+
+[node name="HeaderContainer" parent="SummaryDocument/VBoxContainer" index="0"]
+margin_right = 1012.0
+margin_bottom = 536.0
+
+[node name="SummaryPhoto" parent="SummaryDocument/VBoxContainer/HeaderContainer" index="0"]
+margin_right = 539.0
+margin_bottom = 536.0
+
+[node name="TextureRect" parent="SummaryDocument/VBoxContainer/HeaderContainer/SummaryPhoto" index="0"]
+margin_right = 509.0
+margin_bottom = 506.0
+texture = ExtResource( 3 )
+
+[node name="SummaryOverview" parent="SummaryDocument/VBoxContainer/HeaderContainer" index="1"]
+margin_left = 539.0
+margin_right = 1012.0
+margin_bottom = 536.0
+fullname = "Matteus Adrian"
+age = 45
+
+[node name="Background" parent="SummaryDocument/VBoxContainer" index="1" instance=ExtResource( 1 )]
+margin_top = 536.0
+margin_right = 1012.0
+margin_bottom = 691.0
+title = "Background"
+body = "Matteus Adrian is an engineering manager at Severthum. After graduating from Whitestone’s prestigious computer science program, Adrian joined Severthum as a machine learning engineer. Rising quickly through the ranks, Adrian became an engineering manager after only 3 years at Severthum."
+
+[node name="SuspiciousActivity" parent="SummaryDocument/VBoxContainer" index="2" instance=ExtResource( 1 )]
+margin_top = 691.0
+margin_right = 1012.0
+margin_bottom = 846.0
+title = "Suspicious activity"
+body = "Adrian was flagged for a suspicious increase in income. In the past month, Adrian has more than doubled his monthly income. However, preliminary processing has discovered that Adrian has taken greater responsibility in engineering processes at Severthum. Collected emails show only standard operating procedures and display Adrian acting in the best interests of his employer. Adrian has no prior arrests or any criminal record."
+
+[node name="AuxDocs" parent="SummaryDocument/VBoxContainer" index="3"]
+margin_top = 846.0
+margin_right = 1012.0
+margin_bottom = 947.0
+
+[node name="LinkContainer" parent="SummaryDocument/VBoxContainer/AuxDocs" index="0"]
+margin_right = 982.0
+
+[node name="Label" parent="SummaryDocument/VBoxContainer/AuxDocs/LinkContainer" index="0"]
+margin_right = 952.0
+
+[node name="emails" parent="." instance=ExtResource( 4 )]
+aux_doc_filename = "emails.txt"
+
+[node name="RichTextLabel" parent="emails" index="0"]
+text = "To: Matteus Adrian, <matteusadrian@severthum.com>
+From: Sofia Purnima, <sofiapurnima@severthum.com>
+Hi Matteus,
+
+I’m a bit confused about DICTOR’s new training and testing data. The team and I were able to achieve 82% accuracy while minimizing false positive arrests. Considering how diverse the original dataset was, I think that should count as a win. The updated test data is far more homogenous and also mostly features arrest verdicts instead of ignore verdicts. What’s up with that?
+
+Sofia
+
+
+
+To: sofiapurnima@severthum.com
+From: matteusadrian@severthum.com
+Sofia,
+
+Look, I know the sudden change seems odd, but as your manager, I’m asking you to trust me on this. I’ve been in contact with the KCPD and after some evaluation, they decided that they want the model to make decisions according to some different criteria. This isn’t public knowledge yet, but there are plans to phase DICTOR’s use towards decreasing human supervision over time, and they would prefer the increased confidence on certain types of cases. 
+Between you and me, I know that these changes to the data make it less representative of real incoming cases. However, the police department is our client so we’re obligated to do what they ask of us. Plus, we can’t afford to mess this up, my yearly bonus and the success of this company depends on this project going well. The way I see it, if we satisfy the police department’s requirements, we might get future projects with them. In those, we can work towards making the system better. 
+
+Matteus
+"
+
+[editable path="SummaryDocument"]
+[editable path="SummaryDocument/VBoxContainer/HeaderContainer/SummaryPhoto"]
+[editable path="SummaryDocument/VBoxContainer/AuxDocs"]
+[editable path="emails"]

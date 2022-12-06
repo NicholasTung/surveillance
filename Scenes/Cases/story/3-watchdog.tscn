@@ -11,11 +11,10 @@ anchor_bottom = 1.0
 
 [node name="SummaryDocument" parent="." instance=ExtResource( 1 )]
 guilt_pred = 80
-should_arrest = true
 
 [node name="VBoxContainer" parent="SummaryDocument" index="0"]
-margin_right = 565.0
-margin_bottom = 926.0
+margin_right = 1012.0
+margin_bottom = 946.0
 
 [node name="HeaderContainer" parent="SummaryDocument/VBoxContainer" index="0"]
 margin_right = 1012.0
@@ -40,21 +39,21 @@ age = 32
 [node name="Background" parent="SummaryDocument/VBoxContainer" index="1" instance=ExtResource( 2 )]
 margin_top = 535.0
 margin_right = 1012.0
-margin_bottom = 685.0
+margin_bottom = 690.0
 title = "Background"
 body = "Kaitlyn Bernard is a former software engineer on Severthum’s machine learning team. After dropping out of college, Bernard was employed at numerous companies as a software engineer. After leaving Severthum last year, she started self-publishing blog posts and built a small following."
 
 [node name="SuspiciousActivities" parent="SummaryDocument/VBoxContainer" index="2" instance=ExtResource( 2 )]
-margin_top = 685.0
+margin_top = 690.0
 margin_right = 1012.0
-margin_bottom = 835.0
+margin_bottom = 845.0
 title = "Suspicious activities"
 body = "Bernard recently published a new blog post on her personal website. It gives an overview of DICTOR’s development and makes serious accusations about how it might make inaccurate predictions. The post is also based on highly-classified information that the public is not meant to know. A copy of the blog post has been attached. Recently visited websites show that Bernard frequents several hacking websites and forums. Bernard has a history of civil disobedience. She was arrested at a protest 3 years ago."
 
 [node name="AuxDocs" parent="SummaryDocument/VBoxContainer" index="3"]
-margin_top = 835.0
+margin_top = 845.0
 margin_right = 1012.0
-margin_bottom = 926.0
+margin_bottom = 946.0
 
 [node name="LinkContainer" parent="SummaryDocument/VBoxContainer/AuxDocs" index="0"]
 margin_right = 982.0

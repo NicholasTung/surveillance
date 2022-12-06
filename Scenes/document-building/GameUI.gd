@@ -65,10 +65,13 @@ func eval_verdict(arrested):
 	var verdict_alert_node = $PanelContainer/VBoxContainer/VerdictAlert
 	if current_case_summary.should_arrest == arrested:
 		score.set_score(score.get_score() + 2)
-		verdict_alert_node.visible = false
 	else:
 		# animate this to slide in or something maybe
 		score.set_score(score.get_score() - 3)
+	
+	if (current_case_summary.guilt_pred >= 50) == arrested:
+		verdict_alert_node.visible = false
+	else:
 		verdict_alert_node.text = "MSG: Your decision has been reviewed and has been determined to go against KCPD guidelines."
 		verdict_alert_node.visible = true
 
